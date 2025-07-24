@@ -3,7 +3,7 @@ import cohere from 'cohere-ai';
 cohere.init(process.env.COHERE_API_KEY);
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end();
+  if (req.method !== 'POST') return res.status(405).end(); // Only allow POST requests
 
   const { text } = req.body;
 
